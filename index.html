@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Wish</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            background-color: #f0f4f8; /* Warna background soft */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // Fungsi untuk munculin pop-up pas halaman dibuka
+        window.onload = function() {
+            Swal.fire({
+                title: 'XinXin wants to send you a cute wish!',
+                text: "Accept or Denied?",
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#1e3a8a', // Biru Tua (Navy)
+                cancelButtonColor: '#94a3b8',
+                confirmButtonText: 'Accept! ✨',
+                cancelButtonText: 'Denied',
+                background: '#ffffff',
+                color: '#1e3a8a', // Warna teks biru tua
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                    url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp4M2R4NHp4M2R4NHp4M2R4NHp4M2R4NHp4M2R4NHp4M2R4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/3oriO0OEdcRldUXpJK/giphy.gif")
+                    left top
+                    no-repeat
+                `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // GANTI LINK DI BAWAH INI DENGAN LINK WEB CANVA LO
+                    window.location.href = "https://www.canva.com/design/your-link-here";
+                } else {
+                    Swal.fire({
+                        title: 'Yahhh...',
+                        text: 'Accept it 姐姐:( ',
+                        icon: 'error',
+                        confirmButtonColor: '#1e3a8a'
+                    });
+                }
+            })
+        };
+    </script>
+</body>
+</html>
