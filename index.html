@@ -6,17 +6,17 @@
     <title>A Special Wish</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; display: none; }
+        body { 
+            background-color: #1e3a8a; /* Langsung biru tua biar estetik */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
-
-    <audio id="myAudio" loop>
-        <source src="musik.mp3" type="audio/mpeg">
-    </audio>
-
-    <iframe id="canvaFrame" src="https://madyfl.my.canva.site/xinxin"></iframe>
 
     <script>
         window.onload = function() {
@@ -30,15 +30,19 @@
                 confirmButtonText: 'Accept! ✨',
                 cancelButtonText: 'Denied',
                 background: '#ffffff',
-                color: '#1e3a8a'
+                color: '#1e3a8a',
+                allowOutsideClick: false
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Putar musik
-                    document.getElementById('myAudio').play();
-                    // Munculkan web Canva
-                    document.getElementById('canvaFrame').style.display = 'block';
+                    // Langsung pindah ke web Canva
+                    window.location.href = "https://madyf1.my.canva.site/xinxin";
                 } else {
-                    Swal.fire({ title: 'Yahhh...', text: 'Accept it 姐姐 :( ', icon: 'error', confirmButtonColor: '#1e3a8a' });
+                    Swal.fire({ 
+                        title: 'Yahhh...', 
+                        text: 'Accept it 姐姐 :( ', 
+                        icon: 'error', 
+                        confirmButtonColor: '#1e3a8a' 
+                    });
                 }
             })
         };
